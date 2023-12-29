@@ -17,7 +17,8 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QPalette, QPixmap, QRadialGradient, QTransform)
 from PySide6.QtWidgets import (QApplication, QComboBox, QFontComboBox, QGroupBox,
     QHBoxLayout, QLabel, QLineEdit, QMainWindow,
-    QSizePolicy, QStatusBar, QVBoxLayout, QWidget)
+    QPushButton, QSizePolicy, QStatusBar, QVBoxLayout,
+    QWidget)
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
@@ -41,7 +42,7 @@ class Ui_MainWindow(object):
         self.groupBox.setGeometry(QRect(650, 30, 581, 661))
         self.verticalLayoutWidget = QWidget(self.groupBox)
         self.verticalLayoutWidget.setObjectName(u"verticalLayoutWidget")
-        self.verticalLayoutWidget.setGeometry(QRect(10, 30, 533, 126))
+        self.verticalLayoutWidget.setGeometry(QRect(10, 30, 533, 155))
         self.verticalLayout = QVBoxLayout(self.verticalLayoutWidget)
         self.verticalLayout.setObjectName(u"verticalLayout")
         self.verticalLayout.setContentsMargins(0, 0, 0, 0)
@@ -158,6 +159,11 @@ class Ui_MainWindow(object):
 
         self.verticalLayout.addLayout(self.horizontalLayout_4)
 
+        self.pushButton = QPushButton(self.verticalLayoutWidget)
+        self.pushButton.setObjectName(u"pushButton")
+
+        self.verticalLayout.addWidget(self.pushButton)
+
         MainWindow.setCentralWidget(self.centralwidget)
         self.statusbar = QStatusBar(MainWindow)
         self.statusbar.setObjectName(u"statusbar")
@@ -182,5 +188,6 @@ class Ui_MainWindow(object):
         self.label_6.setText(QCoreApplication.translate("MainWindow", u"\uac00\ub85c", None))
         self.label_7.setText(QCoreApplication.translate("MainWindow", u"\uc138\ub85c", None))
         self.label_10.setText(QCoreApplication.translate("MainWindow", u"\ud3f0\ud2b8 \uc124\uc815", None))
+        self.pushButton.setText(QCoreApplication.translate("MainWindow", u"\uc378\ub124\uc77c \uc0dd\uc131", None))
     # retranslateUi
 
