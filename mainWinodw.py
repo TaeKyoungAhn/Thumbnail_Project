@@ -17,8 +17,8 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QPalette, QPixmap, QRadialGradient, QTransform)
 from PySide6.QtWidgets import (QApplication, QComboBox, QFontComboBox, QGroupBox,
     QHBoxLayout, QLabel, QLineEdit, QMainWindow,
-    QPushButton, QSizePolicy, QStatusBar, QVBoxLayout,
-    QWidget)
+    QPushButton, QSizePolicy, QSpinBox, QStatusBar,
+    QVBoxLayout, QWidget)
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
@@ -42,10 +42,15 @@ class Ui_MainWindow(object):
         self.groupBox.setGeometry(QRect(650, 30, 581, 661))
         self.verticalLayoutWidget = QWidget(self.groupBox)
         self.verticalLayoutWidget.setObjectName(u"verticalLayoutWidget")
-        self.verticalLayoutWidget.setGeometry(QRect(10, 30, 533, 155))
+        self.verticalLayoutWidget.setGeometry(QRect(10, 30, 533, 184))
         self.verticalLayout = QVBoxLayout(self.verticalLayoutWidget)
         self.verticalLayout.setObjectName(u"verticalLayout")
         self.verticalLayout.setContentsMargins(0, 0, 0, 0)
+        self.saveFolderPath = QPushButton(self.verticalLayoutWidget)
+        self.saveFolderPath.setObjectName(u"saveFolderPath")
+
+        self.verticalLayout.addWidget(self.saveFolderPath)
+
         self.horizontalLayout = QHBoxLayout()
         self.horizontalLayout.setObjectName(u"horizontalLayout")
         self.label = QLabel(self.verticalLayoutWidget)
@@ -84,6 +89,9 @@ class Ui_MainWindow(object):
         self.horizontalLayout_2.addWidget(self.label_8)
 
         self.widthCombo = QComboBox(self.verticalLayoutWidget)
+        self.widthCombo.addItem("")
+        self.widthCombo.addItem("")
+        self.widthCombo.addItem("")
         self.widthCombo.setObjectName(u"widthCombo")
         self.widthCombo.setMinimumSize(QSize(150, 0))
         self.widthCombo.setMaximumSize(QSize(100, 100))
@@ -97,6 +105,9 @@ class Ui_MainWindow(object):
         self.horizontalLayout_2.addWidget(self.label_9)
 
         self.heightCombo = QComboBox(self.verticalLayoutWidget)
+        self.heightCombo.addItem("")
+        self.heightCombo.addItem("")
+        self.heightCombo.addItem("")
         self.heightCombo.setObjectName(u"heightCombo")
         self.heightCombo.setMinimumSize(QSize(150, 0))
         self.heightCombo.setMaximumSize(QSize(150, 100))
@@ -156,13 +167,24 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_4.addWidget(self.fontComboBox)
 
+        self.label_11 = QLabel(self.verticalLayoutWidget)
+        self.label_11.setObjectName(u"label_11")
+
+        self.horizontalLayout_4.addWidget(self.label_11)
+
+        self.sizeFontSpin = QSpinBox(self.verticalLayoutWidget)
+        self.sizeFontSpin.setObjectName(u"sizeFontSpin")
+        self.sizeFontSpin.setValue(40)
+
+        self.horizontalLayout_4.addWidget(self.sizeFontSpin)
+
 
         self.verticalLayout.addLayout(self.horizontalLayout_4)
 
-        self.pushButton = QPushButton(self.verticalLayoutWidget)
-        self.pushButton.setObjectName(u"pushButton")
+        self.makeThumbnail = QPushButton(self.verticalLayoutWidget)
+        self.makeThumbnail.setObjectName(u"makeThumbnail")
 
-        self.verticalLayout.addWidget(self.pushButton)
+        self.verticalLayout.addWidget(self.makeThumbnail)
 
         MainWindow.setCentralWidget(self.centralwidget)
         self.statusbar = QStatusBar(MainWindow)
@@ -179,15 +201,25 @@ class Ui_MainWindow(object):
         self.imagePanel.setText("")
         self.label_2.setText(QCoreApplication.translate("MainWindow", u"\uc378\ub124\uc77c \uc0dd\uc131\ud504\ub85c\uadf8\ub7a8 ", None))
         self.groupBox.setTitle(QCoreApplication.translate("MainWindow", u"\ucee8\ud2b8\ub864 \ubc15\uc2a4", None))
+        self.saveFolderPath.setText(QCoreApplication.translate("MainWindow", u"\uc800\uc7a5 \ud3f4\ub354 \uc124\uc815", None))
         self.label.setText(QCoreApplication.translate("MainWindow", u"\ud0c0\uc774\ud2c0 \uc785\ub825 ", None))
         self.label_3.setText(QCoreApplication.translate("MainWindow", u"\ucd5c\ub300 15\uae00\uc790\ub97c \uc785\ub825\ud558\uc2e4 \uc218 \uc788\uc2b5\ub2c8\ub2e4.", None))
         self.label_4.setText(QCoreApplication.translate("MainWindow", u"\ube44\uc728 \uc120\ud0dd", None))
         self.label_8.setText(QCoreApplication.translate("MainWindow", u"\uac00\ub85c", None))
+        self.widthCombo.setItemText(0, QCoreApplication.translate("MainWindow", u"400", None))
+        self.widthCombo.setItemText(1, QCoreApplication.translate("MainWindow", u"500", None))
+        self.widthCombo.setItemText(2, QCoreApplication.translate("MainWindow", u"600", None))
+
         self.label_9.setText(QCoreApplication.translate("MainWindow", u"\uc138\ub85c", None))
+        self.heightCombo.setItemText(0, QCoreApplication.translate("MainWindow", u"400", None))
+        self.heightCombo.setItemText(1, QCoreApplication.translate("MainWindow", u"500", None))
+        self.heightCombo.setItemText(2, QCoreApplication.translate("MainWindow", u"600", None))
+
         self.label_5.setText(QCoreApplication.translate("MainWindow", u"\uc9c1\uc811 \uc785\ub825", None))
         self.label_6.setText(QCoreApplication.translate("MainWindow", u"\uac00\ub85c", None))
         self.label_7.setText(QCoreApplication.translate("MainWindow", u"\uc138\ub85c", None))
         self.label_10.setText(QCoreApplication.translate("MainWindow", u"\ud3f0\ud2b8 \uc124\uc815", None))
-        self.pushButton.setText(QCoreApplication.translate("MainWindow", u"\uc378\ub124\uc77c \uc0dd\uc131", None))
+        self.label_11.setText(QCoreApplication.translate("MainWindow", u"\ud3f0\ud2b8 \ud06c\uae30", None))
+        self.makeThumbnail.setText(QCoreApplication.translate("MainWindow", u"\uc378\ub124\uc77c \uc0dd\uc131", None))
     # retranslateUi
 

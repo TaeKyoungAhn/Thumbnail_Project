@@ -64,10 +64,17 @@
        <x>10</x>
        <y>30</y>
        <width>533</width>
-       <height>155</height>
+       <height>184</height>
       </rect>
      </property>
      <layout class="QVBoxLayout" name="verticalLayout">
+      <item>
+       <widget class="QPushButton" name="saveFolderPath">
+        <property name="text">
+         <string>저장 폴더 설정</string>
+        </property>
+       </widget>
+      </item>
       <item>
        <layout class="QHBoxLayout" name="horizontalLayout">
         <item>
@@ -137,6 +144,21 @@
             <height>100</height>
            </size>
           </property>
+          <item>
+           <property name="text">
+            <string>400</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>500</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>600</string>
+           </property>
+          </item>
          </widget>
         </item>
         <item>
@@ -166,6 +188,21 @@
             <height>100</height>
            </size>
           </property>
+          <item>
+           <property name="text">
+            <string>400</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>500</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>600</string>
+           </property>
+          </item>
          </widget>
         </item>
        </layout>
@@ -263,10 +300,24 @@
         <item>
          <widget class="QFontComboBox" name="fontComboBox"/>
         </item>
+        <item>
+         <widget class="QLabel" name="label_11">
+          <property name="text">
+           <string>폰트 크기</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QSpinBox" name="sizeFontSpin">
+          <property name="value">
+           <number>40</number>
+          </property>
+         </widget>
+        </item>
        </layout>
       </item>
       <item>
-       <widget class="QPushButton" name="pushButton">
+       <widget class="QPushButton" name="makeThumbnail">
         <property name="text">
          <string>썸네일 생성</string>
         </property>
